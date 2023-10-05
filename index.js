@@ -1,6 +1,6 @@
 /*Step 17: obtain DOM objects */
-const getJokeBtn = document.getElementById("your-button-id"); // add id
-const jokeText = document.getElementById("your-text-id"); // add id
+const getJokeBtn = document.getElementById("getJokeButton"); // add id
+const jokeText = document.getElementById("jokeText"); // add id
 
 function apiCall() { 
 
@@ -9,8 +9,8 @@ function apiCall() {
     /*Step 19: Create account with api-ninjas (https://api-ninjas.com/) */
     /*Step 20: Get API url and API Key */
 
-    fetch("request-url", { // add event request url
-        headers: { 'X-Api-Key': 'your-api-key' } // add api key
+    fetch("https://api.api-ninjas.com/v1/jokes?limit=1", { // add event request url
+        headers: { 'X-Api-Key': '3AydJTpQtVKPb0/BYMbThw==q1XjoYJU1jAACqrM' } // add api key
     })
         // Checks the network response 
         .then(function(response) {
@@ -35,7 +35,9 @@ function apiCall() {
 
 
 /*Step 18: Create event listener for button click */
-getJokeBtn.addEventListener("event-listner", apiCall)
+/*On event "click", call function apiCall*/
+getJokeBtn.addEventListener("click", apiCall)
+
 
 
 

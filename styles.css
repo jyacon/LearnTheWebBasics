@@ -35,18 +35,35 @@ p{
 
 .title {
     /*Step 8: Style .title class*/
+    font-size: 30px;
+    font-weight: 100;
 
 }
 
 .jokeAPI-background{
     /*Step 10: Change Background Color to rgba(218, 248, 255, 255)*/
+    background-color: rgba(218,248,255,255);
 }
 
 .container {
     /*Step 12: Style .container class */
+    background-color: white;
+    padding: 5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 10px 10px 10px 10px rgba(60,0,160,0.3);
 }       
 
 button {
     /*Step 14: Style button class */
+    background-color: rgba(66,133,244,255);
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 24px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
