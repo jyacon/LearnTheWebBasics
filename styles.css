@@ -1,3 +1,7 @@
+:root {
+    --button-color: rgba(66,133,244,255);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -17,21 +21,33 @@ p{
 }
 
 .navbar {
-    background-color: transparent;
+    background-color: white;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    display:flex;
 }
 
 .nav-link {
     padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     display: inline-block;
-    margin-right: 20px;
     font-size: 18px;
     text-decoration: none;
     color: black;
+    background-color: transparent;
 }
 
+.nav-link:hover:not(.active) {
+    background-color: rgb(213, 222, 224);
+}
+
+.active {
+    background-color: var(--button-color);
+    color: white;
+}
 
 .title {
     /*Step 8: Style .title class*/
@@ -43,6 +59,8 @@ p{
 .jokeAPI-background{
     /*Step 10: Change Background Color to rgba(218, 248, 255, 255)*/
     background-color: rgba(218,248,255,255);
+    background-image: url("/images/jokebg.png");
+    background-repeat: repeat;
 }
 
 .container {
@@ -51,12 +69,12 @@ p{
     padding: 5rem;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 10px 10px 10px 10px rgba(60,0,160,0.3);
+    box-shadow: 10px 10px 10px 10px rgba(5, 18, 211, 0.171);
 }       
 
-button {
+.jokeButton {
     /*Step 14: Style button class */
-    background-color: rgba(66,133,244,255);
+    background-color: var(--button-color);
     padding: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -65,5 +83,20 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    outline-color: var(--button-color);
+    outline-width: 5px;
+    outline-style: solid;
+    outline-offset: -5px;
+
+    transition: background-color 0.3s, color 0.3s;
 }
 
+.jokeButton:hover {
+    background-color: white;
+    
+    color: var(--button-color);
+}
+
+.jokeButton:active {
+    transform: translateY(5px);
+}

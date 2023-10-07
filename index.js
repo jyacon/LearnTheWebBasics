@@ -1,10 +1,13 @@
 /*Step 17: obtain DOM objects */
 const getJokeBtn = document.getElementById("getJokeButton"); // add id
 const jokeText = document.getElementById("jokeText"); // add id
+const laughButton = document.getElementById("laughButton");
+const laughTrack = new Audio("./sounds/laugh.mp3");
 
 function apiCall() { 
 
     jokeText.textContent = "Fetching a joke...";
+    laughButton.setAttribute("hidden", "");
 
     /*Step 19: Create account with api-ninjas (https://api-ninjas.com/) */
     /*Step 20: Get API url and API Key */
@@ -23,6 +26,7 @@ function apiCall() {
 
             // Update the HTML tag with the joke fetched from the response
             jokeText.textContent = data[0].joke;
+            laughButton.removeAttribute("hidden");
 
         })
 
@@ -33,10 +37,14 @@ function apiCall() {
         });
 };
 
+function playLaughTrack() {
+    laughTrack.play();
+}
 
 /*Step 18: Create event listener for button click */
 /*On event "click", call function apiCall*/
-getJokeBtn.addEventListener("click", apiCall)
+getJokeBtn.addEventListener("click", apiCall);
+laughButton.addEventListener("click", playLaughTrack);
 
 
 
